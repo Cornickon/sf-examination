@@ -21,10 +21,12 @@
 4. Branch Name Convention
 
     - New Feature
-    feature/US
+    
+    feature/US{Number}, example: feature/US002
 
    - Bugfix
-   bugfix/US
+   
+   bugfix/US{Number}, example: bugfix/US002
    
 5. Publish your branch
 
