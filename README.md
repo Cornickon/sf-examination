@@ -44,3 +44,5 @@
 9. Commit your changes to the branch by using: ```git commit -m "US{Number} - Describe your changes briefly"```
 
 10. Run ```git push```
+
+11. Head to GitHub, and go to 'Pull Requests' tab. Click 'Create Pull Request'. Ensure that your target branch is master, and source branch is the one you created for this purpose
