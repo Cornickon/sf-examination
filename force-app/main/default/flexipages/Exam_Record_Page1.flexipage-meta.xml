@@ -71,7 +71,7 @@
                     <name>uiBehavior</name>
                     <value>required</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Exam_Start_Date__c</fieldItem>
+                <fieldItem>Record.Start_Date__c</fieldItem>
                 <identifier>RecordExam_Start_Date_cField</identifier>
             </fieldInstance>
         </itemInstances>
@@ -81,7 +81,7 @@
                     <name>uiBehavior</name>
                     <value>required</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Exam_End_Date__c</fieldItem>
+                <fieldItem>Record.End_Date__c</fieldItem>
                 <identifier>RecordExam_End_Date_cField</identifier>
                 <visibilityRule>
                     <criteria>
@@ -108,7 +108,7 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Current_date_checkbox__c</fieldItem>
+                <fieldItem>Record.Active__c</fieldItem>
                 <identifier>RecordCurrent_date_checkbox_cField</identifier>
             </fieldInstance>
         </itemInstances>
