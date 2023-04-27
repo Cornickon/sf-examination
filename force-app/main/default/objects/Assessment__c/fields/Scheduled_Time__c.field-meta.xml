@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Exam_End_Date__c</fullName>
-    <description>Indicates Exam End Date field on object Exam</description>
+    <fullName>Scheduled_Time__c</fullName>
+    <description>Scheduled time field on Assements records</description>
     <externalId>false</externalId>
-    <label>Exam End Date</label>
+    <label>Scheduled Time</label>
     <required>true</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Date</type>
+    <type>DateTime</type>
 </CustomField>

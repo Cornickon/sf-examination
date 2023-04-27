@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Exam_End_Date__c</fullName>
-    <description>Indicates Exam End Date field on object Exam</description>
+    <fullName>Doesn_t_expire__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Doesn&apos;t expire checkbox on object Exam</description>
     <externalId>false</externalId>
-    <label>Exam End Date</label>
-    <required>true</required>
+    <label>Doesn&apos;t expire?</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Date</type>
+    <type>Checkbox</type>
 </CustomField>
