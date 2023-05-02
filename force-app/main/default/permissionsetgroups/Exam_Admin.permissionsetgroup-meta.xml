@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission set group to be used on Exam User profile for Exam Admin</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Exam Admin</label>
+    <permissionSets>Base_Objects_Read</permissionSets>
+    <permissionSets>Contacts_Full_Access</permissionSets>
+    <permissionSets>Exam_Application</permissionSets>
+    <permissionSets>Exam_Category_Full_Access</permissionSets>
+    <permissionSets>Question_Full_Access</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>
