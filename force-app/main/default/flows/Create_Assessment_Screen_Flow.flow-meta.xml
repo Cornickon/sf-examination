@@ -17,6 +17,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>58.0</apiVersion>
+    <description>Added Fault path for Create Assessment element</description>
     <dynamicChoiceSets>
         <name>GetExamNamesfromGetRecords</name>
         <collectionReference>Get_Published_Exams</collectionReference>
@@ -55,6 +56,9 @@
         <connector>
             <targetReference>Submit_Assessment_for_approval</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Error_Create_Assessment</targetReference>
+        </faultConnector>
         <inputAssignments>
             <field>Exam__c</field>
             <value>
@@ -85,6 +89,9 @@
         <connector>
             <targetReference>Select_Exam_screen</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Error_Getting_Exams</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Is_Published__c</field>
@@ -99,6 +106,38 @@
         <queriedFields>Name</queriedFields>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <screens>
+        <name>Error_Create_Assessment</name>
+        <label>Error Create Assessment</label>
+        <locationX>440</locationX>
+        <locationY>458</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>EM_CreateAssessment</name>
+            <fieldText>&lt;p&gt;Please give below details to your Salesforce Admin&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Flow: &lt;strong&gt;Create_Assessment_Screen_Flow&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;Element: &lt;strong&gt;Create_Assessment_record&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;------------------&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Error_Getting_Exams</name>
+        <label>Error Getting Exams</label>
+        <locationX>704</locationX>
+        <locationY>242</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>EM_GetExams</name>
+            <fieldText>&lt;p&gt;Please give below details to your Salesforce Admin&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Flow: &lt;strong&gt;Create_Assessment_Screen_Flow&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;Element: &lt;strong&gt;Get_Published_Exams&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;------------------&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
     <screens>
         <name>Select_Exam_screen</name>
         <label>Select Exam screen</label>
