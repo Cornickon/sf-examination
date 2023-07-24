@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Assessment to be approved</name>
+    <queueMembers>
+        <users>
+            <user>tstawarski@gmail.com.exammm</user>
+            <user>tstawarski@brave-otter-f0pl6r.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Assessment__c</sobjectType>
+    </queueSobject>
+</Queue>
