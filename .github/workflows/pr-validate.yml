@@ -3,12 +3,12 @@ name: Validate PR
 on:
     pull_request:
       types: [opened, synchronize]
-      branches: [ develop ]
+      branches: [ master ]
       paths:
         - 'force-app/**'
             
 jobs:
-    validate-deployment-on-develop-org:
+    validate-deployment:
         runs-on: ubuntu-latest
         if: ${{ github.actor != 'dependabot[bot]' }}
         steps:
