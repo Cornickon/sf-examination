@@ -1,4 +1,4 @@
-Congrats, you managed to pick a proper date! 
+Congrats, you managed to pick a proper date! More changes please
 
 Your exam date is: {!Assessment__c.Scheduled_Time__c}
 Your exam ID is: {!Assessment__c.Name}
