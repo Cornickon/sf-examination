@@ -2,12 +2,11 @@
   "packageDirectories": [
     {
       "path": "force-app",
-      "default": true,
-      "package": "DreamhouseLWC",
-      "versionName": "Spring '23",
-      "versionNumber": "57.0.0.NEXT"
+      "default": true
     }
   ],
+  "name": "Exam Application",
   "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "57.0"
 }
