@@ -1,0 +1,27 @@
+<html>
+<head></head><body>
+&nbsp; <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+&nbsp; <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+&nbsp; <style type="text/css">
+    /* Your custom styles go here */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Add more styles as needed for your design */
+
+    /* Media Queries for responsive design */
+    @media only screen and (max-width: 600px) {
+      /* Add mobile-specific styles here */
+    }
+  </style>
+
+
+Hi!
+
+Unfortunately, you have failed your exam!
+
+&nbsp;SORRY
+</body>
+</html>

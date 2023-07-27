@@ -129,6 +129,16 @@
                 <identifier>RecordStatus_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Result__c</fieldItem>
+                <identifier>RecordResult_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-486690d5-06f5-4410-9f5c-15f7c9c96215</name>
         <type>Facet</type>
     </flexiPageRegions>
