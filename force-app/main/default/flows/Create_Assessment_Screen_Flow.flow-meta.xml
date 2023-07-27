@@ -4,9 +4,12 @@
         <name>Submit_Assessment_for_approval</name>
         <label>Submit Assessment for approval</label>
         <locationX>176</locationX>
-        <locationY>458</locationY>
+        <locationY>566</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
+        <connector>
+            <targetReference>Registration_Successful</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>objectId</name>
@@ -17,7 +20,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>58.0</apiVersion>
-    <description>Added Fault path for Create Assessment element</description>
+    <description>Added Fault path for Get Assessment Data element</description>
     <dynamicChoiceSets>
         <name>GetExamNamesfromGetRecords</name>
         <collectionReference>Get_Published_Exams</collectionReference>
@@ -54,7 +57,7 @@
         <locationX>176</locationX>
         <locationY>350</locationY>
         <connector>
-            <targetReference>Submit_Assessment_for_approval</targetReference>
+            <targetReference>Get_Assessment_Data_from_Create_Assessment_Element</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Error_Create_Assessment</targetReference>
@@ -80,6 +83,34 @@
         <object>Assessment__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
+    <recordLookups>
+        <name>Get_Assessment_Data_from_Create_Assessment_Element</name>
+        <label>Get Assessment Data from Create Assessment Element</label>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Submit_Assessment_for_approval</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Error_Get_Assessment_Data</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Create_Assessment_record</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Assessment__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>Scheduled_Time__c</queriedFields>
+        <queriedFields>Exam__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordLookups>
         <name>Get_Published_Exams</name>
         <label>Get Published Exams</label>
@@ -109,7 +140,7 @@
     <screens>
         <name>Error_Create_Assessment</name>
         <label>Error Create Assessment</label>
-        <locationX>440</locationX>
+        <locationX>704</locationX>
         <locationY>458</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -123,9 +154,25 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
+        <name>Error_Get_Assessment_Data</name>
+        <label>Error Get Assessment Data</label>
+        <locationX>440</locationX>
+        <locationY>566</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Copy_1_of_EM_CreateAssessment</name>
+            <fieldText>&lt;p&gt;Please give below details to your Salesforce Admin&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Flow: &lt;strong&gt;Create_Assessment_Screen_Flow&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;Element: &lt;strong&gt;Get_Assessment_Data_from_Create_Assessment_Element&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;------------------&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
         <name>Error_Getting_Exams</name>
         <label>Error Getting Exams</label>
-        <locationX>704</locationX>
+        <locationX>968</locationX>
         <locationY>242</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -133,6 +180,22 @@
         <fields>
             <name>EM_GetExams</name>
             <fieldText>&lt;p&gt;Please give below details to your Salesforce Admin&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Flow: &lt;strong&gt;Create_Assessment_Screen_Flow&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;Element: &lt;strong&gt;Get_Published_Exams&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;------------------&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Registration_Successful</name>
+        <label>Registration Successful</label>
+        <locationX>176</locationX>
+        <locationY>674</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>RS_DisplayText</name>
+            <fieldText>&lt;p&gt;Congratulations, you have successfully registered for the Exam!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please find details below.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Name of Exam:&lt;/p&gt;&lt;p&gt;{!Get_Assessment_Data_from_Create_Assessment_Element.Exam__r.Name}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Your Assessment ID:&lt;/p&gt;&lt;p&gt;{!Get_Assessment_Data_from_Create_Assessment_Element.Name}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Date and Time of your Exam:&lt;/p&gt;&lt;p&gt;{!Get_Assessment_Data_from_Create_Assessment_Element.Scheduled_Time__c}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
